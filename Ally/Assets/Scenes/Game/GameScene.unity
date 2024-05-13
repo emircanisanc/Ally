@@ -461,9 +461,11 @@ MonoBehaviour:
   _levelDesignObjects:
   - _pfs:
     - {fileID: 1635941304761979809, guid: 97b7e5002efa2b14d8a391f1bf874096, type: 3}
+  - _pfs:
+    - {fileID: 1635941304761979809, guid: 9ffef8b5538d8384ea0ae71bb8c2b445, type: 3}
   _groundTransform: {fileID: 1735356940}
-  _minRoadCount: 1
-  _maxRoadCount: 3
+  _minRoadCount: 3
+  _maxRoadCount: 5
   _distanceBetweenObstacles: 20
 --- !u!4 &1071638069
 Transform:
@@ -823,7 +825,7 @@ MonoBehaviour:
   _enemyLayers:
     serializedVersion: 2
     m_Bits: 1
-  _range: 5
+  _range: 10
   _damage: 5
   _fireDuration: 0.5
 --- !u!1 &1359991929
