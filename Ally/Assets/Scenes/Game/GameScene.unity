@@ -505,6 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c3f9e7c7b7e6d7459d6b28196ef5bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _finalPhasePf: {fileID: 658936435783274040, guid: d14335a0be0b68d4681c5963ece351a8, type: 3}
   _level: 1
   _levelDesignObjects:
   - _pfs:

@@ -5,8 +5,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public LevelManager Instance { get; private set; }
+    [SerializeField] private GameObject _finalPhasePf;
     [SerializeField] [Min(0)] private int _level = 0;
-
     [SerializeField] private LevelDesignObjects[] _levelDesignObjects;
     [SerializeField] private Transform _groundTransform;
     [SerializeField] [Min(1)] private int _minRoadCount = 1;
@@ -31,6 +31,9 @@ public class LevelManager : MonoBehaviour
             var obstacle = Instantiate(_levelDesignObjects[Random.Range(0, _levelDesignObjects.Length)]._pfs[0]);
             obstacle.transform.position = pos;
         }
+
+        var finalPlane = Instantiate(_finalPhasePf);
+        finalPlane.transform.position = new Vector3(0, 0, _roadCount * _distanceBetweenObstacles);
     }
 
 
