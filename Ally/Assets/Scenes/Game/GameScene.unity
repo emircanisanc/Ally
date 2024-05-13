@@ -465,9 +465,11 @@ MonoBehaviour:
     - {fileID: 1635941304761979809, guid: 9ffef8b5538d8384ea0ae71bb8c2b445, type: 3}
   - _pfs:
     - {fileID: 1422311375151895641, guid: c0397235df497fe45af6f3f47f3ac7ed, type: 3}
+  - _pfs:
+    - {fileID: 4326163387438136572, guid: 5526f2557e3dffd40ae1a9c6d048934a, type: 3}
   _groundTransform: {fileID: 1735356940}
   _minRoadCount: 3
-  _maxRoadCount: 5
+  _maxRoadCount: 6
   _distanceBetweenObstacles: 20
 --- !u!4 &1071638069
 Transform:
