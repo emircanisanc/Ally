@@ -31,6 +31,10 @@ public class ItemDropper : MonoBehaviour
             target.x += Random.Range(-3.5f, 3.5f);
             target.z += Random.Range(2f, 4f);
             drop.DOJump(target, Random.Range(0.7f, 1.3f), 1, Random.Range(0.2f, 0.35f));
+            
+            Vector3 targetEuler = drop.eulerAngles;
+            targetEuler.y = Random.Range(-180, 180);
+            drop.DORotate(targetEuler, 0.2f);
         }
     }
 }

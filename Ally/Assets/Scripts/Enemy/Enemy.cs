@@ -11,7 +11,8 @@ public class Enemy : EnemyBase
 
     private void Awake()
     {
-        _itemDropper = GetComponent<ItemDropper>();    
+        _itemDropper = GetComponent<ItemDropper>();
+        _healthBarImage.fillAmount = 1;
     }
 
     protected override void Die()
@@ -27,4 +28,5 @@ public class Enemy : EnemyBase
         base.ApplyDamage(damage);
         // PLAY ANIM
     }
+
 }

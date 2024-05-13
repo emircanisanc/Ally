@@ -25,4 +25,12 @@ public class EnemyBase : MonoBehaviour, IDamageable
     {
 
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player")) 
+        {
+            GetComponent<Collider>().isTrigger = true;
+        }    
+    }
 }
