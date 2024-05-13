@@ -13,7 +13,6 @@ public class Enemy : EnemyBase
     {
         base.Awake();
         _itemDropper = GetComponent<ItemDropper>();
-        _healthBarImage.fillAmount = 1;
     }
 
     protected override void Die()
@@ -24,10 +23,15 @@ public class Enemy : EnemyBase
         _itemDropper.DropItems();
     }
 
+    protected override void SetHealth(float health)
+    {
+        base.SetHealth(health);
+        _healthBarImage.fillAmount = _currentHealth / _maxHealth;
+    }
+
     public override void ApplyDamage(float damage)
     {
         base.ApplyDamage(damage);
-        _healthBarImage.fillAmount = _currentHealth / _maxHealth;
         // PLAY ANIM
     }
 

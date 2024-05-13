@@ -463,6 +463,8 @@ MonoBehaviour:
     - {fileID: 1635941304761979809, guid: 97b7e5002efa2b14d8a391f1bf874096, type: 3}
   - _pfs:
     - {fileID: 1635941304761979809, guid: 9ffef8b5538d8384ea0ae71bb8c2b445, type: 3}
+  - _pfs:
+    - {fileID: 1422311375151895641, guid: c0397235df497fe45af6f3f47f3ac7ed, type: 3}
   _groundTransform: {fileID: 1735356940}
   _minRoadCount: 3
   _maxRoadCount: 5
@@ -840,6 +842,7 @@ GameObject:
   - component: {fileID: 1359991930}
   - component: {fileID: 1359991935}
   - component: {fileID: 1359991934}
+  - component: {fileID: 1359991936}
   m_Layer: 4
   m_Name: Player
   m_TagString: Player
@@ -926,6 +929,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1359991936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359991929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7383dad5fecc9fa4494bc28fa4293f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1656442025
 GameObject:
   m_ObjectHideFlags: 0

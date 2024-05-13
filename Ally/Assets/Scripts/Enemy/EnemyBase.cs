@@ -11,14 +11,24 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     protected virtual void Awake()
     {
-        _maxHealth += Random.Range(-_randomnessOnHealth, _randomnessOnHealth);
-        _currentHealth = _maxHealth;    
+        SetMaxHealth(_maxHealth + Random.Range(-_randomnessOnHealth, _randomnessOnHealth));
+    }
+
+    public void SetMaxHealth(float maxHealth)
+    {
+        _maxHealth = maxHealth;
+        SetHealth(_maxHealth);
+    }
+
+    protected virtual void SetHealth(float health)
+    {
+        _currentHealth = health;
     }
 
     public virtual void ApplyDamage(float damage)
     {
         if (_currentHealth <= 0) return;
-        _currentHealth = Mathf.Max(0, _currentHealth - damage);
+        SetHealth(Mathf.Max(0, _currentHealth - damage));
         if (_currentHealth <= 0) Die();
     }
 
