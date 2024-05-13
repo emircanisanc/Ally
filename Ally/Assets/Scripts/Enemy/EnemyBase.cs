@@ -42,7 +42,8 @@ public class EnemyBase : MonoBehaviour, IDamageable
     {
         if (other.gameObject.CompareTag("Player")) 
         {
-            other.collider.GetComponent<PlayerMovement>().JumpBack();
+            other.collider.GetComponent<PlayerMovement>().Hit();
+            other.collider.SendMessage("Hit");
             GetComponent<Collider>().isTrigger = true;
         }    
     }

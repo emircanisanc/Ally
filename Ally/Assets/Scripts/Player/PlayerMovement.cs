@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(moveDir * _moveSpeed * Time.deltaTime);
     }
 
-    public void JumpBack()
+    public void Hit()
     {
         Vector3 target = transform.position;
         target.z -= 5f;

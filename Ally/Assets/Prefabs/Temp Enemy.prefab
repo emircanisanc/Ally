@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0afa012525b18489b3e707e58f939e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dropPF: {fileID: 8264430376732867077, guid: f3953c4360219554fb1d76b0a4a4ce76, type: 3}
+  _dropType: {fileID: 11400000, guid: ce028e42e07de3d479a56f47a7ee9b5c, type: 2}
   _dropCount: 4
   _dropRandomness: 2
 --- !u!114 &3305961269603498346

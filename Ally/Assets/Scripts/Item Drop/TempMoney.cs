@@ -6,6 +6,6 @@ public class TempMoney : BaseDropItem
 {
     protected override void OnInteract(Transform player)
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
