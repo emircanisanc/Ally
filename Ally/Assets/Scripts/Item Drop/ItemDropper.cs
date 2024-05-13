@@ -27,10 +27,15 @@ public class ItemDropper : MonoBehaviour
     {
         foreach (Transform drop in _dropList)
         {
+            drop.gameObject.SetActive(true);
+            drop.GetComponent<BaseDropItem>().DeactiveItem();
+
+            drop.transform.position = transform.position + new Vector3(0, Random.Range(0.5f, 1f), 0.5f);
+
             Vector3 target = transform.position;
-            target.x += Random.Range(-3.5f, 3.5f);
-            target.z += Random.Range(2f, 4f);
-            drop.DOJump(target, Random.Range(0.7f, 1.3f), 1, Random.Range(0.2f, 0.35f));
+            target.x += Random.Range(-1.5f, 1.5f);
+            target.z += Random.Range(4.5f, 6.5f);
+            drop.DOJump(target, Random.Range(0.7f, 1.3f), 1, Random.Range(0.2f, 0.35f)).OnComplete(() => drop.GetComponent<BaseDropItem>().ActiveItem());
             
             Vector3 targetEuler = drop.eulerAngles;
             targetEuler.y = Random.Range(-180, 180);

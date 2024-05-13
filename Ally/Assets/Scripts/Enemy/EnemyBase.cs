@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class EnemyBase : MonoBehaviour, IDamageable
 {
+    [SerializeField] private GameObject _gfx;
     [SerializeField] [Min(1)] protected float _maxHealth = 1;
     [SerializeField] private float _randomnessOnHealth = 0;
     protected float _currentHealth;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _maxHealth += Random.Range(-_randomnessOnHealth, _randomnessOnHealth);
         _currentHealth = _maxHealth;    
@@ -23,7 +24,7 @@ public class EnemyBase : MonoBehaviour, IDamageable
 
     protected virtual void Die()
     {
-
+        _gfx.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision other)
