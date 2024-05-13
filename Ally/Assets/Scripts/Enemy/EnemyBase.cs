@@ -25,12 +25,14 @@ public class EnemyBase : MonoBehaviour, IDamageable
     protected virtual void Die()
     {
         _gfx.SetActive(false);
+        GetComponent<Collider>().enabled = false;
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player")) 
         {
+            other.collider.GetComponent<PlayerMovement>().JumpBack();
             GetComponent<Collider>().isTrigger = true;
         }    
     }

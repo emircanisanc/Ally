@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -30,6 +31,15 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir.x < 0 && transform.position.x <= -_limitX) moveDir.x = 0;
 
         transform.Translate(moveDir * _moveSpeed * Time.deltaTime);
+    }
+
+    public void JumpBack()
+    {
+        Vector3 target = transform.position;
+        target.z -= 5f;
+
+        CanMove = false;
+        transform.DOJump(target, 1.2f, 1, 0.35f).OnComplete(() => CanMove = true);
     }
 
     private Vector3 GetInputDir()
