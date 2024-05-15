@@ -9,15 +9,18 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _limitX = 5;
     private Joystick _joystick;
     [SerializeField] private float _moveSpeed = 5f;
-    public bool CanMove { get; set; } = true;
+    public bool CanMove { get; set; } = false;
 
     private void Awake()
     {
         _joystick = FindObjectOfType<Joystick>();
+    }
 
-        var vCam = FindObjectOfType<CinemachineVirtualCamera>();
-        vCam.Follow = transform;
-        vCam.LookAt = transform;
+    public void StartMovement()
+    {
+        CanMove = true;
+        /* PlayerCamera.VirtualCamera.Follow = transform;
+        PlayerCamera.VirtualCamera.LookAt = transform; */
     }
 
     void Update()

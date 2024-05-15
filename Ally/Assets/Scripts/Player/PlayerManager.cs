@@ -9,6 +9,22 @@ namespace Emir
     {
         [SerializeField] private ObjType _dropGoldType;
 
+        private void Start()
+        {
+            GameManager.Instance.OnGameStarted += SetWeaponVisual;
+        }
+
+        private void OnDisable()
+        {
+            if (GameManager.Instance)
+                GameManager.Instance.OnGameStarted -= SetWeaponVisual;
+        }
+
+        private void SetWeaponVisual()
+        {
+            WeaponInventoryManager.Instance.CurrentWeapon.transform.SetParent(transform);
+        }
+
         public void Die()
         {
             Debug.Log("GAME OVER");
