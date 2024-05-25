@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class FloatChangerBonusWall : BaseBonusWall, IDamageable
 {
-    [SerializeField] protected float changeValueMin;
-    [SerializeField] protected float changeValueMax;
-    [SerializeField] protected int changeValueMultiplier;
+    [SerializeField] protected float changeValueOnHitMin;
+    [SerializeField] protected float changeValueOnHitMax;
+    [SerializeField] protected int changeValueOnHitMultiplier;
     protected float changeValueOnHit;
     [SerializeField] protected TextMeshPro changeValueTMP;
     [SerializeField] protected int currentValueMin;
@@ -18,7 +18,7 @@ public class FloatChangerBonusWall : BaseBonusWall, IDamageable
 
     private void Start()
     {
-        changeValueOnHit = Random.Range(changeValueMin, changeValueMax) * changeValueMultiplier;
+        changeValueOnHit = Random.Range(changeValueOnHitMin, changeValueOnHitMax) * changeValueOnHitMultiplier;
         currentValue = Random.Range(currentValueMin, currentValueMax) * currentValueMultiplier;
 
         changeValueTMP.SetText(changeValueOnHit.ToString("0.0"));

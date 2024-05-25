@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class IntChangerBonusWall : BaseBonusWall
+public class IntChangerBonusWall : BaseBonusWall, IDamageable
 {
-    [SerializeField] protected int changeValueMin;
-    [SerializeField] protected int changeValueMax;
-    [SerializeField] protected int changeValueMultiplier;
+    [SerializeField] protected int changeValueOnHitMin;
+    [SerializeField] protected int changeValueOnHitMax;
+    [SerializeField] protected int changeValueOnHitMultiplier;
     protected int changeValueOnHit;
     [SerializeField] protected TextMeshPro changeValueTMP;
     [SerializeField] protected int currentValueMin;
@@ -20,7 +20,7 @@ public class IntChangerBonusWall : BaseBonusWall
 
     private void Start()
     {
-        changeValueOnHit = Random.Range(changeValueMin, changeValueMax) * changeValueMultiplier;
+        changeValueOnHit = Random.Range(changeValueOnHitMin, changeValueOnHitMax) * changeValueOnHitMultiplier;
         currentValue = Random.Range(currentValueMin, currentValueMax) * currentValueMultiplier;
 
         changeValueTMP.SetText(changeValueOnHit.ToString());
