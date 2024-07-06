@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ba91d47d28cdb4c8244b917087558f, type: 3}
   m_Name: "Z\xFClfikar"
   m_EditorClassIdentifier: 
+  WeaponId: 0
   WeaponName: "Z\xFClfikar"
   WeaponSprite: {fileID: 0}
   WeaponBaseDamage: 1

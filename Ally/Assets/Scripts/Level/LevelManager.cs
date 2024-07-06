@@ -14,9 +14,13 @@ public class LevelManager : MonoBehaviour
     private int _roadCount;
     [SerializeField] [Min(1)] private float _distanceBetweenObstacles = 10;
 
+    private int _gameCounter;
+
     private void Awake()
     {
         Instance = this;
+
+        _gameCounter = PlayerPrefs.GetInt("gameCount", 0);
 
         _roadCount = Random.Range(_minRoadCount, _maxRoadCount);
 
@@ -32,8 +36,28 @@ public class LevelManager : MonoBehaviour
             obstacle.transform.position = pos;
         }
 
+        GameManager.Instance.OnGameStarted += UpdateGameCount;
+    }
+
+    private void Start()
+    {
         var finalPlane = Instantiate(_finalPhasePf);
         finalPlane.transform.position = new Vector3(0, 0, _roadCount * _distanceBetweenObstacles);
+        if (WeaponInventoryManager.Instance.TryGetWeaponAt(GameManager.Instance.PlayerLevel, out var weaponData))
+        {
+            Vector3 pos = finalPlane.GetComponentInChildren<LevelEnding>().transform.position;
+            Instantiate(weaponData.WeaponVisualPF, pos + new Vector3(0, 4, 0), Quaternion.identity);
+        }
+    }
+
+    private void OnDestroy() {
+        if (GameManager.Instance) GameManager.Instance.OnGameStarted -= UpdateGameCount;
+    }
+
+    private void UpdateGameCount()
+    {
+        _gameCounter++;
+        PlayerPrefs.SetInt("gameCount", _gameCounter);
     }
 
 

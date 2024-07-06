@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ba91d47d28cdb4c8244b917087558f, type: 3}
   m_Name: "Hayber Kap\u0131s\u0131"
   m_EditorClassIdentifier: 
+  WeaponId: 2
   WeaponName: "Hayber Kap\u0131s\u0131"
   WeaponSprite: {fileID: 0}
   WeaponBaseDamage: 4
   WeaponBaseRange: 3
   WeaponBaseAttackRate: 1
-  WeaponPF: {fileID: 0}
+  WeaponPF: {fileID: 5661164904944528764, guid: e74a94c5a39101e409d2bbf61c59be82, type: 3}
+  WeaponVisualPF: {fileID: 5661164904944528764, guid: e74a94c5a39101e409d2bbf61c59be82, type: 3}
   weaponExtraDamageMultiplier: 15
   weaponExtraRateMultiplier: 15
   weaponExtraRangeMultiplier: 15

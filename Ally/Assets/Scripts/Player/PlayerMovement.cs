@@ -7,14 +7,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _limitX = 5;
-    private Joystick _joystick;
+    [SerializeField] private Joystick _joystick;
     [SerializeField] private float _moveSpeed = 5f;
     public bool CanMove { get; set; } = false;
-
-    private void Awake()
-    {
-        _joystick = FindObjectOfType<Joystick>();
-    }
 
     public void StartMovement()
     {

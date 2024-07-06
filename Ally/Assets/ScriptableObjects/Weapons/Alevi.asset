@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ba91d47d28cdb4c8244b917087558f, type: 3}
   m_Name: Alevi
   m_EditorClassIdentifier: 
+  WeaponId: 1
   WeaponName: Alevi
   WeaponSprite: {fileID: 0}
   WeaponBaseDamage: 2
   WeaponBaseRange: 3
   WeaponBaseAttackRate: 1
-  WeaponPF: {fileID: 0}
+  WeaponPF: {fileID: 5661164904944528764, guid: 9bb3c66169f7c9943868b9c183efda35, type: 3}
+  WeaponVisualPF: {fileID: 5661164904944528764, guid: 9bb3c66169f7c9943868b9c183efda35, type: 3}
   weaponExtraDamageMultiplier: 15
   weaponExtraRateMultiplier: 15
   weaponExtraRangeMultiplier: 15

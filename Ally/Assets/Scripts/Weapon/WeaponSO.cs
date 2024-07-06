@@ -6,18 +6,24 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Weapon/Weapon Data")]
 public class WeaponSO : ScriptableObject
 {
+    public int WeaponId;
     public string WeaponName;
     public Sprite WeaponSprite;
     public float WeaponBaseDamage;
     public float WeaponBaseRange;
     public float WeaponBaseAttackRate;
     public GameObject WeaponPF;
+    public GameObject WeaponVisualPF;
     public WeaponUpgradeData WeaponUpgradeData;
     [SerializeField] protected int weaponExtraDamageMultiplier;
     [SerializeField] protected int weaponExtraRateMultiplier;
     [SerializeField] protected int weaponExtraRangeMultiplier;
 
-    public bool IsUnlocked => true;
+    public bool IsUnlocked => WeaponId == 0 || PlayerPrefs.GetInt("isUnlockedWep" + WeaponId, 0) == 1;
+    public void Unlock()
+    {
+        PlayerPrefs.SetInt("isUnlockedWep" + WeaponId, 1);
+    }
 
     public int WeaponExtraAttackRate => weaponExtraRangeMultiplier * WeaponUpgradeData.WeaponExtraRateLevel / 100;
     public int WeaponExtraDamage => weaponExtraDamageMultiplier * WeaponUpgradeData.WeaponExtraDamageLevel / 100;

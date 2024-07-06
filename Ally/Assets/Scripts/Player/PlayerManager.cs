@@ -25,10 +25,14 @@ namespace Emir
             WeaponInventoryManager.Instance.CurrentWeapon.transform.SetParent(transform);
         }
 
+        private bool isDead;
+
         public void Die()
         {
-            Debug.Log("GAME OVER");
-            Debug.Break();
+            if (isDead) return;
+
+            isDead = true;
+            GameManager.Instance.GameOver();
         }
 
         public void Hit()
