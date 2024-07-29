@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ATTACK DAMAGE
+  m_text: ATTACK RATE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -641,9 +641,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6524076530944230025}
   - component: {fileID: 8227192562359399011}
-  - component: {fileID: 1315428302890129302}
+  - component: {fileID: -9112148315727314013}
   m_Layer: 0
-  m_Name: Attack Damage Changer
+  m_Name: Attack Rate Changer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -686,7 +686,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 2, z: 1}
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &1315428302890129302
+--- !u!114 &-9112148315727314013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -695,12 +695,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7173240823596146219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fc6cb2dd2e2074f801ef88c1ae45b2, type: 3}
+  m_Script: {fileID: 11500000, guid: f6b0a6acb7aeac842be605bc60a8c55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gfx: {fileID: 5649783367392893875}
   IsActive: 1
-  changeValueOnHitMin: 0
+  changeValueOnHitMin: 1
   changeValueOnHitMax: 5
   changeValueOnHitMultiplier: 1
   changeValueTMP: {fileID: 5481836969439268790}
@@ -709,4 +709,4 @@ MonoBehaviour:
   currentValueMultiplier: 1
   currentValueTMP: {fileID: 5213578841042128636}
   wallMaterial: {fileID: 0}
-  variableToChange: {fileID: 11400000, guid: 2e870659fb5148b4fa53d6fef6660620, type: 2}
+  variableToChange: {fileID: 11400000, guid: dfccb4fc4315221458adce49334393da, type: 2}
