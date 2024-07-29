@@ -30,7 +30,9 @@ public class LevelCreator : MonoBehaviour
         {
             Vector3 pos = transform.position;
             pos.z = i * _distanceBetweenObstacles;
-            var obstacle = Instantiate(_levelDesignObjects[Random.Range(0, _levelDesignObjects.Length)]._pfs[0]);
+            int elementIndex = Random.Range(0, _levelDesignObjects.Length);
+            int pfIndex = Random.Range(0, _levelDesignObjects[elementIndex]._pfs.Length);
+            var obstacle = Instantiate(_levelDesignObjects[elementIndex]._pfs[pfIndex]);
             obstacle.transform.position = pos;
         }
     }

@@ -29,8 +29,10 @@ public class WeaponInventoryManager : Singleton<WeaponInventoryManager>
     }
     public bool TryGetWeaponAt(int level, out WeaponSO weapon)
     {
+        weapon = null;
+        if (_weaponList.Weapons.Count <= level) return false;
         weapon = _weaponList.Weapons[level];
-        return weapon != null;
+        return true;
     }
 
     protected override void Awake()

@@ -31,7 +31,7 @@ public class WeaponSO : ScriptableObject
 
     private void OnEnable()
     {
-        WeaponUpgradeData = new WeaponUpgradeData(WeaponName);
+        WeaponUpgradeData = new WeaponUpgradeData(WeaponId.ToString());
     }
 }
 
@@ -52,11 +52,15 @@ public class WeaponUpgradeData
 
     public void Save()
     {
-
+        PlayerPrefs.SetInt(WeaponName + "damageLevel", _damageLevel);
+        PlayerPrefs.SetInt(WeaponName + "rateLevel", _rateLevel);
+        PlayerPrefs.SetInt(WeaponName + "rangeLevel", _rangeLevel);
     }
 
     public void Load()
     {
-
+        _damageLevel = PlayerPrefs.GetInt(WeaponName + "damageLevel", 0);
+        _rateLevel = PlayerPrefs.GetInt(WeaponName + "rateLevel", 0);
+        _rangeLevel = PlayerPrefs.GetInt(WeaponName + "rangeLevel", 0);
     }
 }

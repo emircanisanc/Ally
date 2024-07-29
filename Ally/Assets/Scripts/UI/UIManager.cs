@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,11 @@ public class UIManager : Singleton<UIManager>
 
     [SerializeField] private Button _btnContinueGameOver;
     [SerializeField] private Button _btnContinueGameEnd;
+
+    [Header("UPGRADE")]
+    [SerializeField] private TextMeshProUGUI _attackDamageTMP;
+    [SerializeField] private TextMeshProUGUI _attackRangeTMP;
+    [SerializeField] private TextMeshProUGUI _attackRateTMP;
 
     protected override void Awake()
     {

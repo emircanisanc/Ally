@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -17,7 +15,10 @@ public class LevelManager : MonoBehaviour
         Instance = this;
 
         _gameCounter = PlayerPrefs.GetInt("gameCount", 0);
+    }
 
+    private void Start()
+    {
         CreateLevel();
 
         GameManager.Instance.OnGameStarted += UpdateGameCount;
@@ -49,7 +50,7 @@ public class LevelManager : MonoBehaviour
 
         _level = GameManager.Instance.PlayerLevel - 1;
 
-        finalPlane.GetComponent<FinalPhase>().SetObstaclesHealth(_obstacleHealthStarts[_level], _obstacleHealthIncreases[_level]);
+        finalPlane.GetComponent<FinalPhase>().SetObstaclesHealth(_obstacleHealthStarts[Mathf.Min(_level, _obstacleHealthStarts.Length - 1)], _obstacleHealthIncreases[Mathf.Min(_level, _obstacleHealthIncreases.Length - 1)]);
 
         if (WeaponInventoryManager.Instance.TryGetWeaponAt(GameManager.Instance.PlayerLevel, out var weaponData))
         {
